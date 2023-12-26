@@ -4,6 +4,17 @@
 ### ToDo
 This Starter Code has already implemented the functionalities you implemented in the StarNotary (Version 2) exercise, and have comments in all the files you need to implement your tasks.
 
+ ### Version
+ * truffle : Truffle v5.11.5 (core: 5.11.5)
+ * openzeppelin-solidity : ^2.4.0
+ * Ganache : v7.9.1
+ * Solidity : - 0.5.16 (solc-js)
+ * Node : v20.9.0
+ * Web3.js : v1.10.0
+
+### Token
+* ERC-721 Token Name : Haftasia
+* ERC-721 Token Symbol : HFS
 
 
 ### Dependencies
@@ -18,16 +29,6 @@ npm -v
 
 
 2. **Truffle v5.X.X** - A development framework for Ethereum. 
-```bash
-# Unsinstall any previous version
-npm uninstall -g truffle
-# Install
-npm install -g truffle
-# Specify a particular version
-npm install -g truffle@5.0.2
-# Verify the version
-truffle version
-```
 
 
 2. **Metamask: 5.3.1** - If you need to update Metamask just delete your Metamask extension and install it again.
@@ -38,11 +39,12 @@ truffle version
 
 4. **Other mandatory packages**:
 ```bash
-cd app
+
 # install packages
-npm install --save  openzeppelin-solidity@2.3
-npm install --save  truffle-hdwallet-provider@1.0.17
+npm install --save  openzeppelin-solidity
+npm install --save  truffle-hdwallet-provider
 npm install webpack-dev-server -g
+npm install @openzeppelin/contracts
 npm install web3
 ```
 
@@ -51,15 +53,10 @@ npm install web3
 1. Clean the frontend 
 ```bash
 cd app
-# Remove the node_modules  
-# remove packages
 rm -rf node_modules
-# clean cache
-npm cache clean
+npm cache clean --force
 rm package-lock.json
-# initialize npm (you can accept defaults)
-npm init
-# install all modules listed as dependencies in package.json
+npm init -y
 npm install
 ```
 

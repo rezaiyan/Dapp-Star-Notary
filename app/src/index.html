@@ -1,35 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>StarNotary DAPP</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  </head>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarNotary DAPP</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
   <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: 1px solid #ddd;
+    }
+
     input {
       display: block;
+      margin: 0 auto;
       margin-bottom: 12px;
+      padding: 8px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #toast {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: none;
+      z-index: 1;
+      width: 100%;
     }
   </style>
-  <body>
-    <h1>StarNotary Token DAPP</h1>
 
-    <hr>
+</head>
 
+<body>
+  <div id="toast">Status Message</div>
+
+  <h1>StarNotary Token DAPP</h1>
+
+  <hr>
+
+  <div>
+    <h2>Create a Star</h2>
+    <label for="starName">Star Name:</label>
+    <input type="text" id="starName" placeholder="Enter star name">
     <br>
-      <h1>Create a Star</h1>
-      <br><label for="starName">Star Name:</label><input type="text" id="starName"></input>
-      <br><label for="starId">Star ID:</label><input type="text" id="starId"></input>
-      <br><br><button id="createStar" onclick="App.createStar()">Create Star</button>
-      <br>
-      <hr>
-      <br>
-      <h1>Look up a Star</h1>
-      <br><label for="name">Star ID:</label><input type="text" id="lookid"></input>
-      <br><br><button onclick="App.lookUp()">Look Up a Star</button>
-      <hr>
-      <br>
-      <span id="status"></span>
-      <br>
-    <script src="index.js"></script>
-  </body>
+    <label for="starId">Star ID:</label>
+    <input type="text" id="starId" placeholder="Enter star ID">
+    <br><br>
+    <button onclick="App.createStar()">Create Star</button>
+  </div>
+
+  <hr>
+
+  <div>
+    <h2>Look up a Star</h2>
+    <label for="lookid">Star ID:</label>
+    <input type="text" id="lookid" placeholder="Enter star ID">
+    <br><br>
+    <button onclick="App.lookUp()">Look Up a Star</button>
+  </div>
+
+  <hr>
+
+  <script src="index.js" defer></script>
+</body>
+
 </html>
