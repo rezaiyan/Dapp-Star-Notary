@@ -18,6 +18,16 @@ const App = {
 
   initializeWeb3: async function () {
     if (window.ethereum) {
+      // Request additional permissions
+      await window.ethereum.request({
+        method: "wallet_requestPermissions",
+        params: [
+          {
+            eth_accounts: {}
+          }
+        ]
+      });
+
       // Use MetaMask's provider
       return new Web3(window.ethereum);
     } else {
